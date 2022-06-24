@@ -23,3 +23,12 @@ func Test_Add_With_Some_Numbers(t *testing.T) {
 
 	assert.Equal(t, 6, result)
 }
+
+func Test_Add_With_New_Lines_Between_Numbers(t *testing.T) {
+	result, err := internal.Add("1\n2,3")
+	if err != nil {
+		t.Fail()
+	}
+
+	assert.Equal(t, 6, result)
+}
