@@ -32,3 +32,12 @@ func Test_Add_With_New_Lines_Between_Numbers(t *testing.T) {
 
 	assert.Equal(t, 6, result)
 }
+
+func Test_Add_With_Delimiters(t *testing.T) {
+	result, err := internal.Add("//;\\n1;2")
+	if err != nil {
+		t.Fail()
+	}
+
+	assert.Equal(t, 3, result)
+}
