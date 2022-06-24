@@ -1,6 +1,8 @@
 package internal
 
 import (
+	"errors"
+	"fmt"
 	"strconv"
 	"strings"
 )
@@ -12,6 +14,11 @@ func Add(numbers string) (result int, err error) {
 	sum := 0
 	for _, i := range splitNumbers {
 		number, _ := strconv.Atoi(i)
+		if number < 0 {
+			msg := fmt.Sprintf("negatives not allowed: %s", numbers)
+			err := errors.New(msg)
+			return 0, err
+		}
 		sum += number
 	}
 	return sum, nil
