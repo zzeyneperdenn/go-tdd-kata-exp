@@ -43,7 +43,7 @@ func Test_Add_With_Delimiters(t *testing.T) {
 }
 
 func Test_Add_With_Negative_Numbers(t *testing.T) {
-	numbers := "-1-2"
+	numbers := "-1,-2"
 	_, err := internal.Add(numbers)
 
 	assert.Error(t, err, "negatives not allowed: %s", numbers)
