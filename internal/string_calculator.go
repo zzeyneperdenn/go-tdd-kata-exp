@@ -1,5 +1,16 @@
 package internal
 
+import (
+	"strconv"
+	"strings"
+)
+
 func Add(numbers string) (result int, err error) {
-	return 0, err
+	splitNumbers := strings.Split(numbers, ",")
+	sum := 0
+	for _, i := range splitNumbers {
+		number, _ := strconv.Atoi(i)
+		sum += number
+	}
+	return sum, nil
 }
