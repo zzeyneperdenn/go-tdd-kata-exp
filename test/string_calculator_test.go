@@ -34,7 +34,7 @@ func Test_Add_With_New_Lines_Between_Numbers(t *testing.T) {
 }
 
 func Test_Add_With_Delimiters(t *testing.T) {
-	result, err := internal.Add("//;\\n1;2")
+	result, err := internal.Add("//;\n1;2")
 	if err != nil {
 		t.Fail()
 	}
